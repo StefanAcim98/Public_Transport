@@ -24,12 +24,18 @@
     <ClCompile Include="CityLines.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BusStop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Standpoints.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CityLines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BusStop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

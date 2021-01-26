@@ -11,26 +11,24 @@ CityLines::CityLines()
 	}
 	string line;
 	while (getline(input, line)) {
-		vector<int> allNumbers;
+		vector<int> stageA;
+		vector<int> stageB;
+		vector<pair<int, int>> pairs;
 		string nameKey;
 		int k = 0;
 		int numberLine = 0;
 		bool first = true;
 		if (!line.empty()) {
-			while (k < line.size()) {
+			while (line[k] != '#') {
 				if (line[k] == ' ') {
 					if (first) {
 						nameKey = line.substr(0, k);
 						first = false;
 					}
 					else {
-						allNumbers.push_back(numberLine);
+						stageA.push_back(numberLine);
 						numberLine = 0;
 					}
-				}
-				else if (line[k] == '#') {
-					cityLinesMap_.insert({ nameKey, allNumbers });
-					break;
 				}
 				else {
 					if (!first) {
@@ -40,6 +38,25 @@ CityLines::CityLines()
 				}
 				k++;
 			}
+			stageA.push_back(numberLine);
+			numberLine = 0;
+			k++;
+			while (k < line.size()) {
+				if (line[k] == ' ') {
+					stageB.push_back(numberLine);
+					numberLine = 0;
+				}
+				else {
+						numberLine *= 10;
+						numberLine += line[k] - '0';
+				}
+				k++;
+			}
+			stageB.push_back(numberLine);
+			for (int i = 0; i < stageA.size(); i++) {
+				pairs.push_back(std::make_pair(stageA[i], stageB[i]));
+			}
+			cityLinesMap_.insert({ nameKey, pairs });
 		}
 	}
 	input.close();
@@ -49,9 +66,15 @@ ostream& operator<<(ostream& os, const CityLines& ctl)
 {
 	stringstream p;
 	for (auto itr = ctl.cityLinesMap_.begin(); itr != ctl.cityLinesMap_.end(); itr++) {
-		p << itr->first << ' ';
-		for (auto number : itr->second) {
-			p << to_string(number) << ' ';
+		p << itr->first << endl;
+		p << "direction A: ";
+		for (auto &number : itr->second) {
+			p << to_string(number.first) << ' ';
+		}
+		p << endl;
+		p << "direction B: ";
+		for (auto &number : itr->second) {
+			p << to_string(number.second) << ' ';
 		}
 		p << endl;
 	}

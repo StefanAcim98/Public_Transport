@@ -4,6 +4,7 @@
 #include <string>
 #include "Standpoints.h"
 #include "CityLines.h"
+#include "BusStop.h"
 
 using namespace std;
 
@@ -12,4 +13,6 @@ int main() {
 	cout << *sps << endl;
 	CityLines* ctl = new CityLines();
 	cout << *ctl << endl;
+	BusStop* bs = new BusStop(578, sps, ctl);
+	cout << *bs << endl;
 }
