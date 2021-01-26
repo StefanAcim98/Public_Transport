@@ -3,10 +3,13 @@
 #include <fstream>
 #include <string>
 #include "Standpoints.h"
+#include "CityLines.h"
 
 using namespace std;
 
 int main() {
 	Standpoints* sps = new Standpoints();
-	cout << *sps;
+	cout << *sps << endl;
+	CityLines* ctl = new CityLines();
+	cout << *ctl << endl;
 }

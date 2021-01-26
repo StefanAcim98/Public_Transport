@@ -10,8 +10,10 @@ public:
 
 	Standpoints();
 
+	unordered_map<int, string> getStandPointsMap() const { return standPointsMap_; }
+
 	friend ostream& operator<<(ostream& os, const Standpoints& sps);
 
 protected:
-	unordered_map<int, string> umap_;
+	unordered_map<int, string> standPointsMap_;
 };

@@ -139,10 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CityLines.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Standpoints.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CityLines.h" />
     <ClInclude Include="Standpoints.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
