@@ -1,4 +1,5 @@
 #include <sstream>
+#include <fstream>
 #include "BusStop.h"
 #include "CityLines.h"
 #include "Standpoints.h"
@@ -20,6 +21,13 @@ BusStop::BusStop(int k, Standpoints* sps, CityLines* ctl)
 			}
 		}
 	}
+}
+
+void BusStop::writeToFile() const
+{
+	fstream file("stajaliste_" + to_string(this->busStopNumber_) + ".txt" , ios::out);
+	file << *this;
+	file.close();
 }
 
 ostream& operator<<(ostream& os, const BusStop& bs)

@@ -20,6 +20,8 @@ public:
 	string getBusStopName() const { return busStopName_; }
 	set<string>& getBusesInBusStop() { return busesInBusStop_; }
 
+	void writeToFile() const;
+
 	friend ostream& operator<<(ostream& os, const BusStop& bs);
 
 private:

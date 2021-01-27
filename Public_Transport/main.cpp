@@ -13,6 +13,7 @@ int main() {
 	cout << *sps << endl;
 	CityLines* ctl = new CityLines();
 	cout << *ctl << endl;
-	BusStop* bs = new BusStop(578, sps, ctl);
+	BusStop* bs = new BusStop(154, sps, ctl);
 	cout << *bs << endl;
+	bs->writeToFile();
 }
