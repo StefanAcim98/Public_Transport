@@ -27,6 +27,9 @@
     <ClCompile Include="BusStop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BusLine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Standpoints.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BusStop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BusLine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
